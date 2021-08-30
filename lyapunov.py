@@ -11,12 +11,10 @@ def lyapunov(string, xbound, ybound, maxiter=100, width=3, height=3, dpi=100, tr
         returns a Lyupanov fractal according to the proved string (e.g. 'ABAA')
     """
 
-    N_warmup = maxiter/3
     L = len(string)
 
     xmin,xmax = [float(xbound[0]),float(xbound[1])]
     ymin,ymax = [float(ybound[0]),float(ybound[1])]
-
     nx = width*dpi
     ny = height*dpi
 
@@ -25,26 +23,15 @@ def lyapunov(string, xbound, ybound, maxiter=100, width=3, height=3, dpi=100, tr
 
     lattice = np.zeros((int(nx), int(ny)), dtype=np.float64)
 
-    count = 0
     for i in prange(len(xvals)):
         for j in prange(len(yvals)):
 
+            count = 0
             x = 0.5
             lamd = 0.0
 
             xv = xvals[j]
             yv = xvals[i]
-
-            #for n in range(N_warmup):
-            #
-            #    S = string[count%L]
-            #    if S == 'A':
-            #        rn = xv
-            #    else:
-            #        rn = yv
-            #    count += 1
-            #
-            #    x = (rn*x)*(1-x)
 
             for n in range(maxiter):
 
@@ -57,9 +44,9 @@ def lyapunov(string, xbound, ybound, maxiter=100, width=3, height=3, dpi=100, tr
 
                 x = (rn*x)*(1-x)
                 lamd += np.log(np.abs(rn*(1-(2*x))))
-
-            lamd /= maxiter
+                
             lattice[i,j] += lamd
+            lamd /= maxiter
 
     if transpose:
         lattice = lattice.T
