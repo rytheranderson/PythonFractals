@@ -22,10 +22,6 @@ yB = (-0.641313061470000 - 0.00000000000010, -0.641313061470000 + 0.000000000000
 
 ### strings and bounds
 
-string = AABBBBBABABAAAAAA 
-xB = (2.0, 4.0)
-yB = (2.0, 4.0)
-
 string = AAAABA 
 xB = (2.60, 4.0)
 yB = (2.45, 4.0)
