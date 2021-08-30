@@ -1,0 +1,41 @@
+### ----- Cool Mandelbrot Regions ----- ####
+
+### Interesting zoomed regions, aspect ratios are 3:2 width:height, can be easily adjusted
+
+M0, use maxiter >= 10000, looks good with many colormaps
+xB = (-0.775683769840 - 0.00000000015, -0.775683769840 + 0.00000000015)
+yB = ( 0.136467358480 - 0.0000000001,  0.136467358480 + 0.0000000001)
+
+M1, use maxiter >= 1000, should use stacked/cyclic colormaps
+xB = ( 0.360240447 - 0.000000015,  0.360240447 + 0.000000015)
+yB = (-0.641313060 - 0.000000010, -0.641313060 + 0.000000010)
+
+M2, use maxiter >= 2000, should use stacked/cyclic colormaps
+xB = ( 0.3602404434376143632361252444495 - 0.00000000000007,  0.3602404434376143632361252444495 + 0.00000000000023)
+yB = (-0.6413130610648031748603750151793 - 0.00000000000008, -0.6413130610648031748603750151793 + 0.00000000000012)
+
+M3, use maxiter >= 3000, should use stacked/cyclic colormaps
+xB = ( 0.360240453040458 - 0.00000000000015,  0.360240453040458 + 0.00000000000015)
+yB = (-0.641313061470000 - 0.00000000000010, -0.641313061470000 + 0.00000000000010)
+
+### ----- Cool Lyapunov Images ----- ####
+
+### strings and bounds
+
+string = AABBBBBABABAAAAAA 
+xB = (2.0, 4.0)
+yB = (2.0, 4.0)
+
+string = AAAABA 
+xB = (2.60, 4.0)
+yB = (2.45, 4.0)
+
+string = AAB 
+xB = (2.5, 4.0) 
+yB = (2.5, 4.0)
+
+### General observations
+
+maxiter 10-100 + large vert_exag yields a "liquidy" image, increasing maxiter sharpens lines to a more "metallic" image for some regions 
+gamma > 1.0 tends to help for flat images (vert_exag=0) with 
+decreasing maxiter < 20 removes fuzzy regions, but makes color variation difficult
