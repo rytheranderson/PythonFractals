@@ -114,5 +114,5 @@ addition is a function for generating Markus-Lyapunov fractals, with a special i
 "classic" blue/green coloring.
 
 ## Usage
-See examples.py for usage examples of each function.
+See the above code snippets and examples.py for usage examples of each function.
 
