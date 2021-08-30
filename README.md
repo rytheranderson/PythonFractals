@@ -10,7 +10,9 @@ The mandelbrot and julia functions take as input the complex valued function tha
 
 ## Example Images
 
+<p align="center">
 <img src="./mandelbrot_ex3.png" width="400" height="300"/>
+</p>
 A zoomed Mandelbrot image produced with this code:
 
 ```
