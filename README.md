@@ -29,8 +29,11 @@ man = mandelbrot(xB, yB, power, args=2, width=4, height=3, maxiter=5000, dpi=300
 image(man, cmap=mymap, filename='mandelbrot_ex3', gamma=0.8)
 ```
 
-![Julia animation example](./julia_animation_ex.gif)
+<p align="center">
+<img src="./julia_animation_ex.png" width="400" height="300"/>
+</p>
 A Julia set animation produced with this code:
+
 ```
 import numpy as np
 from complex_dynamics import julia_series, magnetic_2
@@ -42,8 +45,11 @@ s = julia_series(c_vals, [-1,1], [-0.75,1.25], magnetic_2, args=2, maxiter=100, 
 animate(s, gamma=0.9, cmap=plt.cm.gist_ncar, filename='julia_animation_ex')
 ```
 
-![Lyapunov example](./lyapunov_ex.png)
+<p align="center">
+<img src="./lyapunov_ex.png" width="400" height="300"/>
+</p>
 A Markus–Lyapunov fractal image produced with this code:
+
 ```
 from lyapunov import lyapunov
 from image_creation import image
@@ -57,8 +63,11 @@ im = lyapunov(string, xB, yB, maxiter=200, dpi=300, width=4, height=3)
 image(im, gamma=3.0, vert_exag=10000.0, filename='lyapunov_ex', cmap=plt.cm.gray)
 ```
 
-![Random walk example](./random_walk_ex.png)
+<p align="center">
+<img src="./random_walk_ex.png" width="400" height="300"/>
+</p>
 A random walk image produced with this code:
+
 ```
 import numpy as np
 from random_walks import construct_moves, random_walk_3D
@@ -71,8 +80,11 @@ M = random_walk_3D(moves, 5000000, width=4, height=3, depth=1, dpi=300, displace
 random_walk_3D_image(M, filename='random_walk_ex', cmap=plt.cm.gist_yarg, gamma=1.0, single_color=False)
 ```
 
-![Buddhabrot example](./buddhabrot_ex.png)
+<p align="center">
+<img src="./buddhabrot_ex.png" width="400" height="300"/>
+</p>
 A Buddhabrot image produced with this code:
+
 ```
 from buddhabrot import compute_cvals, buddhabrot
 from image_creation import nebula_image

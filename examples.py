@@ -61,7 +61,7 @@ def mandelbrot_ex2(): # lowered maxiter from ex0
 def mandelbrot_ex3(): # zoomed in on a mini-Mandel, stacked colormaps look good
 
     xB = ( 0.3602404434376143632361252444495 - 0.00000000000003,  0.3602404434376143632361252444495 + 0.00000000000025)
-    yB = (-0.6413130610648031748603750151793 - 0.00000000000005, -0.6413130610648031748603750151793 + 0.00000000000013)
+    yB = (-0.6413130610648031748603750151793 - 0.00000000000006, -0.6413130610648031748603750151793 + 0.00000000000013)
 
     start_time = time.time()
     mymap = stack_cmaps(plt.cm.gist_gray, 50)
@@ -158,7 +158,7 @@ def lyapunov_ex():
     xB = (2.60, 4.0)
     yB = (2.45, 4.0)
 
-    im = lyapunov(string, xB, yB, maxiter=200, dpi=300, width=4, height=3)
+    im = lyapunov(string, xB, yB, maxiter=80, dpi=300, width=4, height=3)
     image(im, gamma=3.0, vert_exag=10000.0, filename='lyapunov_ex', cmap=plt.cm.gray)
 
 # ----- random walk image -----#
@@ -183,22 +183,17 @@ def buddhabrot_ex():
     cvals = compute_cvals(1000000, xB, yB, power, args=2, width=4, height=3, dpi=300)
 
     bud0 = buddhabrot(xB, yB, cvals, power, args=2, horizon=1.0E6, maxiter=100, width=5, height=4, dpi=300)
-    save_image_array(bud0, name='save0')
-
-    bud1 = buddhabrot(xB, yB, cvals, power, args=2, horizon=1.0E6, maxiter=1000, width=5, height=4, dpi=300)
-    save_image_array(bud1, name='save1')
-    
+    bud1 = buddhabrot(xB, yB, cvals, power, args=2, horizon=1.0E6, maxiter=1000, width=5, height=4, dpi=300)    
     bud2 = buddhabrot(xB, yB, cvals, power, args=2, horizon=1.0E6, maxiter=10000, width=5, height=4, dpi=300)
-    save_image_array(bud2, name='save2')
     
-    nebula_image(bud0, bud1, bud2, gamma=0.4, filename='buddhabrot_ex', image_type='tiff')
+    nebula_image(bud0, bud1, bud2, gamma=0.4, filename='buddhabrot_ex', image_type='png')
 
     print('calculation took %s seconds ' % np.round((time.time() - start_time), 3))
 
 if __name__ == '__main__':
 
     #mandelbrot_ex3()
-    julia_animation_ex()
+    #julia_animation_ex()
     #lyapunov_ex()
     #random_walk_ex()
     #buddhabrot_ex()
