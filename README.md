@@ -19,7 +19,7 @@ A zoomed Mandelbrot image produced with this code:
     
     # x and y boundaries, x being the real part and y being the imaginary part in the complex plane
     xB = ( 0.3602404434376143632361252444495 - 0.00000000000003,  0.3602404434376143632361252444495 + 0.00000000000025)
-    yB = (-0.6413130610648031748603750151793 - 0.00000000000005, -0.6413130610648031748603750151793 + 0.00000000000013)
+    yB = (-0.6413130610648031748603750151793 - 0.00000000000006, -0.6413130610648031748603750151793 + 0.00000000000013)
     
     mymap = stack_cmaps(plt.cm.gist_gray, 50)
     man = mandelbrot(xB, yB, power, args=2, width=4, height=3, maxiter=5000, dpi=300)
@@ -39,7 +39,7 @@ A Julia set animation produced with this code:
     animate(s, gamma=0.9, cmap=plt.cm.gist_ncar, filename='julia_animation_ex')
 ```
 
-![Lyapunov](./lyapunov_ex.gif)
+![Lyapunov](./lyapunov_ex.png)
 A Markus–Lyapunov fractal image produced with this code:
 ```
     from lyapunov import lyapunov
@@ -54,7 +54,7 @@ A Markus–Lyapunov fractal image produced with this code:
     image(im, gamma=3.0, vert_exag=10000.0, filename='lyapunov_ex', cmap=plt.cm.gray)
 ```
 
-![random walk](./random_walk_ex.gif)
+![random walk](./random_walk_ex.png)
 A random walk image produced with this code:
 ```
     import numpy as np
@@ -68,7 +68,7 @@ A random walk image produced with this code:
     random_walk_3D_image(M, filename='random_walk_ex', cmap=plt.cm.gist_yarg, gamma=1.0, single_color=False)
 ```
 
-![buddha](./buddhabrot_ex.gif)
+![buddha](./buddhabrot_ex.png)
 A Buddhabrot image produced with this code:
 ```
     from buddhabrot import compute_cvals, buddhabrot
