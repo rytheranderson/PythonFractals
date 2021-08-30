@@ -10,10 +10,11 @@ The mandelbrot and julia functions take as input the complex valued function tha
 
 ## Example Images
 
+### Mandelbrot Set
 <p align="center">
 <img src="./mandelbrot_ex3.png" width="400" height="300"/>
 </p>
-A zoomed Mandelbrot image produced with this code:
+Image produced with this code:
 
 ```
 from complex_dynamics import mandelbrot, power
@@ -29,10 +30,11 @@ man = mandelbrot(xB, yB, power, args=2, width=4, height=3, maxiter=5000, dpi=300
 image(man, cmap=mymap, filename='mandelbrot_ex3', gamma=0.8)
 ```
 
+### Julia Set Animation
 <p align="center">
-<img src="./julia_animation_ex.png" width="400" height="300"/>
+<img src="./julia_animation_ex.gif" width="400" height="300"/>
 </p>
-A Julia set animation produced with this code:
+Animation produced with this code:
 
 ```
 import numpy as np
@@ -45,10 +47,11 @@ s = julia_series(c_vals, [-1,1], [-0.75,1.25], magnetic_2, args=2, maxiter=100, 
 animate(s, gamma=0.9, cmap=plt.cm.gist_ncar, filename='julia_animation_ex')
 ```
 
+### Markus-Lyapunov Fractal
 <p align="center">
 <img src="./lyapunov_ex.png" width="400" height="300"/>
 </p>
-A Markus–Lyapunov fractal image produced with this code:
+Image produced with this code:
 
 ```
 from lyapunov import lyapunov
@@ -63,10 +66,11 @@ im = lyapunov(string, xB, yB, maxiter=200, dpi=300, width=4, height=3)
 image(im, gamma=3.0, vert_exag=10000.0, filename='lyapunov_ex', cmap=plt.cm.gray)
 ```
 
+### Random Walk
 <p align="center">
 <img src="./random_walk_ex.png" width="400" height="300"/>
 </p>
-A random walk image produced with this code:
+Image produced with this code:
 
 ```
 import numpy as np
@@ -80,10 +84,11 @@ M = random_walk_3D(moves, 5000000, width=4, height=3, depth=1, dpi=300, displace
 random_walk_3D_image(M, filename='random_walk_ex', cmap=plt.cm.gist_yarg, gamma=1.0, single_color=False)
 ```
 
+### Buddhabrot with Nebula Coloring
 <p align="center">
 <img src="./buddhabrot_ex.png" width="400" height="300"/>
 </p>
-A Buddhabrot image produced with this code:
+Image produced with this code:
 
 ```
 from buddhabrot import compute_cvals, buddhabrot
@@ -95,13 +100,8 @@ yB = (-1.10, 1.10)
 cvals = compute_cvals(1000000, xB, yB, power, args=2, width=4, height=3, dpi=300)
 
 bud0 = buddhabrot(xB, yB, cvals, power, args=2, horizon=1.0E6, maxiter=100, width=5, height=4, dpi=300)
-save_image_array(bud0, name='save0')
-
 bud1 = buddhabrot(xB, yB, cvals, power, args=2, horizon=1.0E6, maxiter=1000, width=5, height=4, dpi=300)
-save_image_array(bud1, name='save1')
-
 bud2 = buddhabrot(xB, yB, cvals, power, args=2, horizon=1.0E6, maxiter=10000, width=5, height=4, dpi=300)
-save_image_array(bud2, name='save2')
 
 nebula_image(bud0, bud1, bud2, gamma=0.4, filename='buddhabrot_ex', image_type='tiff')
 ```
