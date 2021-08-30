@@ -10,8 +10,9 @@ The mandelbrot and julia functions take as input the complex valued function tha
 
 ## Example Images
 
-<img src="./mandelbrot_ex3.png" width="40" height="30" />
+<img src="./mandelbrot_ex3.png" width="400" height="300"/>
 A zoomed Mandelbrot image produced with this code:
+
 ```
 from complex_dynamics import mandelbrot, power
 from image_creation import image, stack_cmaps
