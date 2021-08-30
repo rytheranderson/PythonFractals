@@ -90,12 +90,7 @@ def nebula_image(AB, AG, AR, filename='f', image_type='png', ticks='off', gamma=
 
 def animate(series, fps=15, bitrate=1800, cmap=plt.cm.hot, filename='f', ticks='off', gamma=0.3, vert_exag=0, ls=[315,10]):
 
-<<<<<<< HEAD
     writer = animation.PillowWriter(fps=fps, metadata=dict(artist='Me'), bitrate=bitrate)
-=======
-    Writer = animation.writers['Pillow']
-    writer = Writer(fps=fps, metadata=dict(artist='Me'), bitrate=bitrate)
->>>>>>> f087012c1bf19f0a595a8a98d4526c198fd3a816
 
     norm = colors.PowerNorm(gamma)
     light = colors.LightSource(azdeg=ls[0], altdeg=ls[1])
@@ -116,11 +111,7 @@ def animate(series, fps=15, bitrate=1800, cmap=plt.cm.hot, filename='f', ticks='
         ims.append([im])
 
     ani = animation.ArtistAnimation(FIG, ims, interval=50, blit=True, repeat_delay=1000)
-<<<<<<< HEAD
     ani.save(filename + '.gif', dpi=dpi, writer=writer)
-=======
-    ani.save(filename + '.mp4', dpi=dpi)
->>>>>>> f087012c1bf19f0a595a8a98d4526c198fd3a816
 
 def markus_lyapunov_image(M, gammas=(1.0, 1.0, 1.0), ticks='off', filename='f', image_type='png', ls=[315,10], vert_exag=0.0):
 
@@ -147,7 +138,6 @@ def markus_lyapunov_image(M, gammas=(1.0, 1.0, 1.0), ticks='off', filename='f', 
     plt.axis(ticks)
 
     M = np.dstack((red, green, blue))
-<<<<<<< HEAD
     elev = A
 
     if vert_exag != 0.0:
@@ -160,12 +150,9 @@ def markus_lyapunov_image(M, gammas=(1.0, 1.0, 1.0), ticks='off', filename='f', 
     F = plt.gcf()
     F.set_size_inches(width, height)
 
-=======
     ax0.imshow(M, origin='lower', vmin=0.0, vmax=1.0)
     F = plt.gcf()
     F.set_size_inches(width, height)
-
->>>>>>> f087012c1bf19f0a595a8a98d4526c198fd3a816
     fig.savefig(filename + '.' + image_type, dpi=dpi)
 
 def random_walk_3D_image(lattice, cmap=plt.cm.hot, single_color=False, filename='f', image_type='png', ticks='off', gamma=0.3, vert_exag=0, ls=[315,10], alpha_scale=1.0):

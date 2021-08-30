@@ -36,22 +36,16 @@ def magnetic_1(z, c, args):
 @jit
 def magnetic_2(z, c, args):
     return ( (z*z*z * 3*(c-1)*z + (c-1)*(c-2) ) / ( 3*z*z + 3*(c-2)*z + (c-1)*(c-2) + 1) ) * ( (z*z*z * 3*(c-1)*z + (c-1)*(c-2) ) / ( 3*z*z + 3*(c-2)*z + (c-1)*(c-2) + 1) )
-<<<<<<< HEAD
 
 # functions for Mandelbrot and Julia set array creation (can then be turned into images)
-=======
->>>>>>> f087012c1bf19f0a595a8a98d4526c198fd3a816
 
 @jit
 def mandelbrot(xbound, ybound, update_func, args=2, width=5, height=5, dpi=100, maxiter=100, horizon=2.0**40, log_smooth=True):
 
-<<<<<<< HEAD
     """
         function for producing Mandelbrot array, log_smooth reduces sharp changes in coloration
     """
 
-=======
->>>>>>> f087012c1bf19f0a595a8a98d4526c198fd3a816
     xmin,xmax = [float(xbound[0]),float(xbound[1])]
     ymin,ymax = [float(ybound[0]),float(ybound[1])]
 
@@ -89,7 +83,6 @@ def mandelbrot(xbound, ybound, update_func, args=2, width=5, height=5, dpi=100, 
 @jit
 def julia(c, xbound, ybound, update_func, args=2, width=5, height=5, dpi=100, maxiter=100, horizon=2.0**40, log_smooth=True):
 
-<<<<<<< HEAD
     """
         function for producing Julia array, log_smooth reduces sharp changes in coloration
     """
@@ -125,50 +118,14 @@ def julia(c, xbound, ybound, update_func, args=2, width=5, height=5, dpi=100, ma
 
                 z = update_func(z, c, args)
 
-=======
-    xmin,xmax = [float(xbound[0]),float(xbound[1])]
-    ymin,ymax = [float(ybound[0]),float(ybound[1])]
-
-    nx = width*dpi
-    ny = height*dpi
-
-    xvals  = np.array([xmin + i*(xmax - xmin)/(nx) for i in range(nx)], dtype=np.float64)
-    yvals  = np.array([ymin + i*(ymax - ymin)/(ny) for i in range(ny)], dtype=np.float64)
-
-    lattice = np.zeros((int(nx), int(ny)), dtype=np.float64)
-
-    log_horizon = log(log(horizon))/log(2)
-
-    for i in prange(len(xvals)):
-        for j in prange(len(yvals)):
-
-            z = xvals[i] + 1j * yvals[j]
-
-            for n in range(maxiter):
-
-                az = abs(z)
-
-                if az > horizon:
-                    if log_smooth:
-                        lattice[i,j] = n - log(log(az))/log(2) + log_horizon
-                    else:
-                        lattice[i,j] = n
-                    break
-
-                z = update_func(z, c, args)
-
->>>>>>> f087012c1bf19f0a595a8a98d4526c198fd3a816
     return (lattice, width, height, dpi)
 
 def julia_series(c_vals, xbound, ybound, update_func, args=2, width=5, height=5, dpi=100, maxiter=100, horizon=2.0**40, log_smooth=True):
 
-<<<<<<< HEAD
     """
         produces a series of Julia arrays (one for each c_val in c_vals), can be used to make an animation
     """
 
-=======
->>>>>>> f087012c1bf19f0a595a8a98d4526c198fd3a816
     series = []
     
     for c in c_vals:
