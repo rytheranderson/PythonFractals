@@ -154,12 +154,12 @@ def julia_animation_ex():
 
 def lyapunov_ex():
 
-    string = 'AABBBBBABABAAAAAA' 
-    xB = (2.5, 4.0) 
-    yB = (2.5, 4.0)
+    string = 'AAABA'
+    xB = (2.60, 4.0)
+    yB = (2.45, 4.0)
 
-    im = lyapunov(string, xB, yB, maxiter=100, dpi=300, width=4, height=3)
-    image(im, gamma=3.0, vert_exag=10000.0, filename='lyapunov_ex', cmap=plt.cm.YlGnBu_r)
+    im = lyapunov(string, xB, yB, maxiter=200, dpi=300, width=4, height=3)
+    image(im, gamma=3.0, vert_exag=10000.0, filename='lyapunov_ex', cmap=plt.cm.gray)
 
 # ----- random walk image -----#
 
@@ -198,8 +198,8 @@ def buddhabrot_ex():
 if __name__ == '__main__':
 
     #mandelbrot_ex3()
-    #julia_animation_ex()
-    lyapunov_ex()
+    julia_animation_ex()
+    #lyapunov_ex()
     #random_walk_ex()
     #buddhabrot_ex()
 

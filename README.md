@@ -20,4 +20,4 @@ See examples.py for usage examples of each function.
 
 ## Example Images
 ![Mandelbrot](./mandelbrot_ex3.png)
-![Julia animation](./julian_animation_ex.gif)
+![Julia animation](./julia_animation_ex.gif)
